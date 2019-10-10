@@ -1,2 +1,1 @@
-# Weather-Forecast-AngularJS
-Weather forecast AngularJS app.
+Repetition of AngularJS.
