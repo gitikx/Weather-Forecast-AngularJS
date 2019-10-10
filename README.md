@@ -1,1 +1,2 @@
-Repetition of AngularJS.
+# Weather-Forecast-AngularJS
+Weather forecast AngularJS app.
