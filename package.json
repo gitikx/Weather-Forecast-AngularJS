@@ -2,6 +2,13 @@
   "name": "Weather-Forecast-AngularJS",
   "version": "1.0.0",
   "dependencies": {
-    "angular": "1.7.8"
+    "angular": "1.7.8",
+    "less": "3.9.0"
+  },
+  "scripts": {
+    "start-dev": "node start.js"
+  },
+  "devDependencies": {
+    "live-server": "^1.2.1"
   }
 }
