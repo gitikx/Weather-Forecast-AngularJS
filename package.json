@@ -7,8 +7,5 @@
   },
   "scripts": {
     "start-dev": "node start.js"
-  },
-  "devDependencies": {
-    "live-server": "^1.2.1"
   }
 }
