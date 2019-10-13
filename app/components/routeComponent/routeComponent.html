@@ -1,1 +1,8 @@
-<div class='switcher'><div class='switchButton'>Button</div><div class='switchButton'>Button</div></div>
+<div class="topFixer">
+    <div class='switcher'><span class='switchButton'><div class="buttonText">Прогнозы</div></span><span
+            class='switchButton'><div class="buttonText">Избранное</div></span><span class='switchButton'><div
+            class="buttonText">Настройки</div></span></div>
+</div>
+<div class="content">
+    <span ng-repeat="city in $ctrl.data"><forecast-component data="city.data"></forecast-component></span>
+</div>

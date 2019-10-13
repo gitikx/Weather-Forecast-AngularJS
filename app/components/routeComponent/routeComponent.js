@@ -3,6 +3,9 @@ app.component("routeComponent", {
     templateUrl: "components/routeComponent/routeComponent.html"
 
 })
-function routeCtrl() {
-    this.name = "routeComponent!";
+
+function routeCtrl(dataService, $scope) {
+    dataService.updateWeather();
+    this.data = dataService.citiesData;
+
 }
