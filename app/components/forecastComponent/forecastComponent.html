@@ -1,3 +1,6 @@
-<div class="forecast"ng-click="$ctrl.log($ctrl.data)">
-    <div ng-class="[$ctrl.data.weather[0].main]"></div>
+<div class="forecast" ng-click="$ctrl.log($ctrl.data)">
+    <div class="locationTitle">{{$ctrl.data.name}}</div>
+    <div class="temperature">Temp: +{{$ctrl.data.main.temp}} K</div>
+    <div class="wind">Wind: {{$ctrl.data.wind.speed}} m/s, {{$ctrl.data.wind.deg}}°</div>
+    <span class="imgWeather" ng-class="[$ctrl.data.weather[0].main]" title="{{$ctrl.data.weather[0].description}}"></span>
 </div>
