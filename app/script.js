@@ -1,1 +1,2 @@
-let app = angular.module("forecastApp", []);
+app = angular.module("forecastApp", []);
+import('./services/apiService');

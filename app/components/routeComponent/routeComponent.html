@@ -1,8 +1,13 @@
 <div class="topFixer">
-    <div class='switcher'><span class='switchButton'><div class="buttonText">Forecasts</div></span><span
-            class='switchButton'><div class="buttonText">Favourite</div></span><span class='switchButton'><div
-            class="buttonText">Settings</div></span></div>
-</div>
-<div class="content">
-    <span ng-repeat="city in $ctrl.data"><forecast-component data="city.data"></forecast-component></span>
+    <div class='switcher'>
+        <div class='switchButton'>
+            <div class="buttonText">Forecasts</div>
+        </div>
+        <div class='switchButton'>
+            <div class="buttonText">Favourite</div>
+        </div>
+        <div class='switchButton'>
+            <div class="buttonText">Settings</div>
+        </div>
+    </div>
 </div>

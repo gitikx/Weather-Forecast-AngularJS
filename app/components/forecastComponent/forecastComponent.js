@@ -6,8 +6,8 @@ app.component("forecastComponent", {
     }
 });
 
-function forecastController() {
+function forecastController(weatherService) {
     this.log = function (data) {
-        console.log(data);
+        weatherService.log()
     }
 }
