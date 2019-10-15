@@ -6,7 +6,7 @@
     "less": "3.9.0"
   },
   "scripts": {
-    "start-dev": "node start.js"
+    "build": "grunt default"
   },
   "devDependencies": {
     "grunt": "^1.0.4",

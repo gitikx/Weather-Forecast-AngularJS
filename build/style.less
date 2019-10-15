@@ -26,10 +26,6 @@ body {
       text-align: center;
       display: inline-block;
 
-      &_text {
-        margin-top: 10px;
-      }
-
       &:hover {
         background-color: lighten(@mainColor, 20%);
         cursor: pointer;
@@ -54,6 +50,11 @@ body {
 .Clouds {
   background-image: url('resources/clouds.png');
 }
+
+.buttonText {
+  margin-top: 10px;
+}
+
 
 .forecast-container {
   display: inline-block;
@@ -104,3 +105,7 @@ body {
   margin-left: auto;
   margin-right: auto;
 }
+
+@radius: 10px;
+@buttonHeight : 50px;
+@mainColor : blueviolet;
