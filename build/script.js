@@ -49430,10 +49430,7 @@ function apiService($http) {
                 params: {
                     "q": city.requestParameter
                 },
-                headers: {
-                    'X-RapidAPI-Key': "f2fd435ba9msha503b8651eee0c8p1e9af2jsn219cc11ca6b5",
-                    'X-RapidAPI-Host': "community-open-weather-map.p.rapidapi.com",
-                }
+                headers: apiConfig
             }).then(function successCallback(response) {
                 city.data = response.data;
             }, function errorCallback(response) {
@@ -49445,39 +49442,10 @@ function apiService($http) {
 
 app.service("weatherService", weatherService);
 function weatherService(apiService) {
-    // this.citiesData = [
-    //     {
-    //         requestParameter: "Minsk, belarus",
-    //         city: "Minsk",
-    //         country: "Belarus"
-    //     },
-    //     {
-    //         requestParameter: "Grodno, belarus",
-    //         city: "Grodno",
-    //         country: "Belarus"
-    //     },
-    //     {
-    //         requestParameter: "Homyel, belarus",
-    //         city: "Homyel",
-    //         country: "Belarus"
-    //     }, {
-    //         requestParameter: "Brest, belarus",
-    //         city: "Brest",
-    //         country: "Belarus"
-    //     }, {
-    //         requestParameter: 'Vitsyebsk, belarus',
-    //         city: "Vitsebsk",
-    //         country: "Belarus"
-    //     },
-    //     {
-    //         requestParameter: 'Mahilyow, belarus',
-    //         city: "Mogilev",
-    //         country: "Belarus"
-    //     }
-    // ];
     this.citiesData = cities;
     apiService.updateWeather('https://community-open-weather-map.p.rapidapi.com/weather', this.citiesData);
 }
+
 const cities = [{
     "requestParameter": "Minsk, belarus",
     "city": "Minsk",
@@ -49509,7 +49477,7 @@ const cities = [{
     "country": "Belarus"
   }
 ]
-const config = {
+const apiConfig = {
   'X-RapidAPI-Key': "f2fd435ba9msha503b8651eee0c8p1e9af2jsn219cc11ca6b5",
   'X-RapidAPI-Host': "community-open-weather-map.p.rapidapi.com"
 }
