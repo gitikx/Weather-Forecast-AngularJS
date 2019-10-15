@@ -1,2 +1,1 @@
-app = angular.module("forecastApp", []);
-import('./services/apiService');
+const app = angular.module("forecastApp", []);

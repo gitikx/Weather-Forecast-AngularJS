@@ -1,6 +1,6 @@
 app.component("weatherComponent", {
     controller: weatherCtrl,
-    templateUrl: "components/weatherComponent/weatherComponent.html"
+    templateUrl: "views/weatherComponent.html"
 });
 
 function weatherCtrl(weatherService) {

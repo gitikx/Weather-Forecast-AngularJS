@@ -1,5 +1,5 @@
 app.component("forecastComponent", {
-    templateUrl: "components/forecastComponent/forecastComponent.html",
+    templateUrl: "views/forecastComponent.html",
     controller: forecastController,
     bindings: {
         data: "<"

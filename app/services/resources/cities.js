@@ -1,4 +1,4 @@
- [{
+const cities = [{
     "requestParameter": "Minsk, belarus",
     "city": "Minsk",
     "country": "Belarus"

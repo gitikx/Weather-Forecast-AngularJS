@@ -1,6 +1,6 @@
 app.component("routeComponent", {
     controller: routeCtrl,
-    templateUrl: "components/routeComponent/routeComponent.html"
+    templateUrl: "views/routeComponent.html"
 });
 
 function routeCtrl() {
