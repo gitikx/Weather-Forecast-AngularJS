@@ -1,1 +1,1 @@
-const app = angular.module("forecastApp", []);
+const app = angular.module("forecastApp", ["ngRoute"]);

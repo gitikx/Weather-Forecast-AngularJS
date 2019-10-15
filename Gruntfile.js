@@ -37,9 +37,12 @@ module.exports = function (grunt) {
                 dist: {
                     files: {
                         'build/style.less': 'app/styles/*.less',
-                        'build/script.js': ['node_modules/angular/angular.js',
+                        'build/script.js': [
+                            'node_modules/angular/angular.js',
+                            'node_modules/angular-route/angular-route.js',
                             'node_modules/less/dist/less.js',
                             'app/script.js',
+                            'app/config/routeProvider.js',
                             'app/components/*/*.js',
                             'app/services/*.js',
                             'app/services/resources/*.js'
@@ -58,7 +61,7 @@ module.exports = function (grunt) {
                         port: 8000,
                         keepAlive: true,
                         base: {
-                            path: '/',
+                            path: 'build/',
                             options: {
                                 index: 'index.html',
                                 maxAge: 300000
@@ -73,7 +76,6 @@ module.exports = function (grunt) {
     grunt.loadNpmTasks('grunt-contrib-copy');
     grunt.loadNpmTasks('grunt-contrib-concat');
     grunt.loadNpmTasks('grunt-contrib-clean');
-    grunt.loadNpmTasks('grunt-contrib-connect');
 
     grunt.registerTask('default', ['clean', 'copy:dist', 'concat:dist']);
 };
