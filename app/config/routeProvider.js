@@ -5,7 +5,7 @@ app.config(function ($routeProvider) {
         });
     $routeProvider.when('/starred',
         {
-            template : "<starred-component></starred-component>"
+            template : "<div>There are should be starred component</div>"
         });
     $routeProvider.otherwise({redirectTo: '/'})
 });
