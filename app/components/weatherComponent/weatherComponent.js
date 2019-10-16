@@ -4,5 +4,5 @@ app.component("weatherComponent", {
 });
 
 function weatherCtrl(weatherService) {
-    this.data = weatherService.citiesData;
+    this.data = weatherService.updateWeather();
 }

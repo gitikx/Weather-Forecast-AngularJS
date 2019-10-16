@@ -50657,6 +50657,7 @@ require('./polyfill-done.js');
 },{"./lib/core.js":101,"./lib/es6-extensions.js":102,"./polyfill-done.js":103,"asap":98}]},{},[2])(2)
 });
 const app = angular.module("forecastApp", ["ngRoute"]);
+// ws --spa index.html
 
 app.config(function ($routeProvider) {
     $routeProvider.when('/',
@@ -50678,7 +50679,7 @@ app.component("forecastComponent", {
     }
 });
 
-function forecastController(weatherService) {
+function forecastController() {
 
 }
 
@@ -50687,7 +50688,10 @@ app.component("routeComponent", {
     templateUrl: "views/routeComponent.html"
 });
 
-function routeCtrl() {
+function routeCtrl(weatherService) {
+    this.log = function () {
+        console.log(weatherService.updateWeather());
+    }
 }
 
 app.component("weatherComponent", {
@@ -50696,34 +50700,37 @@ app.component("weatherComponent", {
 });
 
 function weatherCtrl(weatherService) {
-    this.data = weatherService.citiesData;
+    this.data = weatherService.updateWeather();
 }
 
 app.service("apiService", apiService);
 
 function apiService($http) {
-    this.updateWeather = function (url, parameters) {
-        parameters.forEach(function (city) {
-            $http({
-                method: 'GET',
-                url: url,
-                params: {
-                    "q": city.requestParameter
-                },
-                headers: apiConfig
-            }).then(function successCallback(response) {
-                city.data = response.data;
-            }, function errorCallback(response) {
-                console.log("error request");
-            });
+    this.get = function (url, parameters) {
+        return $http({
+            method: 'GET',
+            url: apiConfig.apiUrl + url,
+            params: parameters,
+            headers: apiConfig
         })
     };
 }
 
 app.service("weatherService", weatherService);
-function weatherService(apiService) {
-    this.citiesData = cities;
-    apiService.updateWeather('https://community-open-weather-map.p.rapidapi.com/weather', this.citiesData);
+
+function weatherService(apiService, $q) {
+    this.updateWeather = function () {
+        let promises = [], dataTwo = [];
+        cities.forEach(function (city) {
+            promises.push(apiService.get('weather', {q: city.requestParameter}));
+        });
+        $q.all(promises).then(function (results) {
+            results.forEach(function (element) {
+                dataTwo.push(element.data);
+            })
+        });
+        return dataTwo;
+    };
 }
 
 const cities = [{
@@ -50758,6 +50765,7 @@ const cities = [{
   }
 ]
 const apiConfig = {
-  'X-RapidAPI-Key': "f2fd435ba9msha503b8651eee0c8p1e9af2jsn219cc11ca6b5",
-  'X-RapidAPI-Host': "community-open-weather-map.p.rapidapi.com"
+    'X-RapidAPI-Key': "f2fd435ba9msha503b8651eee0c8p1e9af2jsn219cc11ca6b5",
+    'X-RapidAPI-Host': "community-open-weather-map.p.rapidapi.com",
+    apiUrl: "https://community-open-weather-map.p.rapidapi.com/"
 }

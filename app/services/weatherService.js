@@ -1,5 +1,16 @@
 app.service("weatherService", weatherService);
-function weatherService(apiService) {
-    this.citiesData = cities;
-    apiService.updateWeather('https://community-open-weather-map.p.rapidapi.com/weather', this.citiesData);
+
+function weatherService(apiService, $q) {
+    this.updateWeather = function () {
+        let promises = [], dataTwo = [];
+        cities.forEach(function (city) {
+            promises.push(apiService.get('weather', {q: city.requestParameter}));
+        });
+        $q.all(promises).then(function (results) {
+            results.forEach(function (element) {
+                dataTwo.push(element.data);
+            })
+        });
+        return dataTwo;
+    };
 }

@@ -3,5 +3,8 @@ app.component("routeComponent", {
     templateUrl: "views/routeComponent.html"
 });
 
-function routeCtrl() {
+function routeCtrl(weatherService) {
+    this.log = function () {
+        console.log(weatherService.updateWeather());
+    }
 }

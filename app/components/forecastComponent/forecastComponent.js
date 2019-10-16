@@ -6,6 +6,6 @@ app.component("forecastComponent", {
     }
 });
 
-function forecastController(weatherService) {
+function forecastController() {
 
 }
