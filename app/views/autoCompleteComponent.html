@@ -1,6 +1,6 @@
-<div><input ng-model="autoCompleteCtrl.cityName" list="cities-list"></div>
+<div><input ng-model="ctrl.cityName" list="cities-list"></div>
 <datalist id="cities-list">
-    <div ng-repeat="name in autoCompleteCtrl.citiesNames">
+    <div ng-repeat="name in ctrl.citiesNames">
         <option value="{{name}}" />
     </div>
 </datalist>

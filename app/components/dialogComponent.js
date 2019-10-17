@@ -8,5 +8,4 @@ app.component("dialogComponent", {
 });
 
 function dialogCtrl() {
-    let ctrl = this;
 }

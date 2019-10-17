@@ -1,6 +1,7 @@
 app.component("autoCompleteComponent", {
     templateUrl: "views/autoCompleteComponent.html",
     controller: autoCompleteCtrl,
+    controllerAs: "ctrl",
     bindings: {
         cityName: "=",
         citiesNames: '<'
@@ -9,5 +10,7 @@ app.component("autoCompleteComponent", {
 
 function autoCompleteCtrl() {
     var ctrl = this;
+    debugger;
+    console.log(ctrl.citiesNames);
 
 }

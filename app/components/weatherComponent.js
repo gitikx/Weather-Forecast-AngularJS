@@ -13,7 +13,8 @@ function weatherCtrl(weatherService, dialogService) {
         ctrl.getWeather();
         ctrl.citiesNames = cities.map(function (item) {
             return item.city;
-        })
+        });
+        console.log(ctrl.citiesNames);
     };
 
     ctrl.getWeather = function () {
