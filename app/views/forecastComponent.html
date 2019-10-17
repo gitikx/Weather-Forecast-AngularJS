@@ -1,6 +1,6 @@
 <div  class="forecast-container">
-    <div class="forecast-container_title">{{$ctrl.data.name}}</div>
-    <div class="forecast-container_temperature">Temp: +{{$ctrl.data.main.temp}} K</div>
-    <div class="forecast-container_wind">Wind: {{$ctrl.data.wind.speed}} m/s, {{$ctrl.data.wind.deg}}°</div>
-    <span class="forecast-container_image" ng-class="[$ctrl.data.weather[0].main]" title="{{$ctrl.data.weather[0].description}}"></span>
+    <div class="forecast-container_title">{{forecastCtrl.data.name}}</div>
+    <div class="forecast-container_temperature">Temp: +{{forecastCtrl.data.main.temp}} K</div>
+    <div class="forecast-container_wind">Wind: {{forecastCtrl.data.wind.speed}} m/s, {{forecastCtrl.data.wind.deg}}°</div>
+    <span class="forecast-container_image" ng-class="[forecastCtrl.data.weather[0].main]" title="{{forecastCtrl.data.weather[0].description}}"></span>
 </div>

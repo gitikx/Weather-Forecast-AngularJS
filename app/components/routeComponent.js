@@ -1,5 +1,6 @@
 app.component("routeComponent", {
     controller: routeCtrl,
+    controllerAs : "routeCtrl",
     templateUrl: "views/routeComponent.html"
 });
 

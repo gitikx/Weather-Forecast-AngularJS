@@ -1,31 +1,31 @@
 const cities = [{
-    "requestParameter": "Minsk, belarus",
+    "fullName": "Minsk, belarus",
     "city": "Minsk",
     "country": "Belarus"
   },
   {
-    "requestParameter": "Grodno, belarus",
+    "fullName": "Grodno, belarus",
     "city": "Grodno",
     "country": "Belarus"
   },
   {
-    "requestParameter": "Homyel, belarus",
+    "fullName": "Homyel, belarus",
     "city": "Homyel",
     "country": "Belarus"
   },
   {
-    "requestParameter": "Brest, belarus",
+    "fullName": "Brest, belarus",
     "city": "Brest",
     "country": "Belarus"
   },
   {
-    "requestParameter": "Vitsyebsk, belarus",
-    "city": "Vitsebsk",
+    "fullName": "Vitsyebsk, belarus",
+    "city": "Vitsyebsk",
     "country": "Belarus"
   },
   {
-    "requestParameter": "Mahilyow, belarus",
-    "city": "Mogilev",
+    "fullName": "Mahilyow, belarus",
+    "city": "Mahilyow",
     "country": "Belarus"
   }
 ]

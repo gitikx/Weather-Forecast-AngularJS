@@ -43,7 +43,7 @@ module.exports = function (grunt) {
                             'node_modules/less/dist/less.js',
                             'app/script.js',
                             'app/config/routeProvider.js',
-                            'app/components/*/*.js',
+                            'app/components/*.js',
                             'app/services/*.js',
                             'app/services/resources/*.js'
                         ]

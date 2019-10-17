@@ -1,16 +1,24 @@
 app.service("weatherService", weatherService);
 
 function weatherService(apiService, $q) {
-    this.updateWeather = function () {
-        let promises = [], dataTwo = [];
+    this.getWeather = function () {
+        let promises = [],
+            data = [],
+            deferred = $q.defer();
+
         cities.forEach(function (city) {
-            promises.push(apiService.get('weather', {q: city.requestParameter}));
+            promises.push(apiService.get('weather', {q: city.fullName}));
         });
+
         $q.all(promises).then(function (results) {
             results.forEach(function (element) {
-                dataTwo.push(element.data);
-            })
+                data.push(element.data);
+            });
+            deferred.resolve(data);
+        }, function (reject) {
+            deferred.reject("Connection error");
         });
-        return dataTwo;
+
+        return deferred.promise;
     };
 }
