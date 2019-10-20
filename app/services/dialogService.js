@@ -1,7 +1,7 @@
 app.service("dialogService", dialogService);
 
 function dialogService() {
-    this.showDialog = function (message) {
+    this.showDialog = function (message,$compile) {
         var elem = angular.element(document.querySelector("body"));
         // var dialog = angular.element('<div class="dialog-container">' +
         //     '<div class="dialog-container_window">' +

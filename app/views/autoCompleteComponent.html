@@ -1,4 +1,4 @@
-<div><input ng-model="ctrl.cityName" list="cities-list"></div>
+<span><input placeholder="City name" class="inputer_input" ng-model="ctrl.cityName" list="cities-list"></span>
 <datalist id="cities-list">
     <div ng-repeat="name in ctrl.citiesNames">
         <option value="{{name}}" />

@@ -9,8 +9,4 @@ app.component("autoCompleteComponent", {
 });
 
 function autoCompleteCtrl() {
-    var ctrl = this;
-    debugger;
-    console.log(ctrl.citiesNames);
-
 }

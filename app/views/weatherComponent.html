@@ -1,6 +1,5 @@
 <div class="content">
-    <auto-complete-component class="inputer" city-name="weatherCtrl.searchParameter" cities-names="weatherCtrl.citiesNames"></auto-complete-component>
-    <span ng-repeat="city in weatherCtrl.citiesWeather | filter: {name : weatherCtrl.searchParameter}">
+       <span ng-repeat="city in weatherCtrl.citiesWeather | filter: {name : weatherCtrl.searchParameter}">
         <forecast-component data="city"></forecast-component>
     </span>
 </div>

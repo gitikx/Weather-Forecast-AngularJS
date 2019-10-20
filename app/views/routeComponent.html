@@ -1,17 +1,15 @@
 <div class="switcher-container">
     <div class='switcher-container_box'>
-        <div class='switcher-container_box_button'>
+        <span class='switcher-container_box_button'>
             <a href="#!/">
-                <div class="switcher-container_box_button_text">Forecasts</div>
+                <span class="switcher-container_box_button_text">Forecasts</span>
             </a>
-        </div>
-        <div class='switcher-container_box_button'>
-            <div class="switcher-container_box_button_text">
-                <a href="#!/starred">Favourite</a></div>
-        </div>
-        <div class='switcher-container_box_button'>
-            <div class="switcher-container_box_button_text">
-                <a href="#!/settings">Settings</a></div>
-        </div>
+        </span>
+        <span class='switcher-container_box_button'>
+            <span class="switcher-container_box_button_text">
+                <a href="#!/starred">Favourite</a>
+            </span>
+        </span>
+        <auto-complete-component class="inputer" city-name="weatherCtrl.searchParameter" cities-names="weatherCtrl.citiesNames"></auto-complete-component>
     </div>
 </div>

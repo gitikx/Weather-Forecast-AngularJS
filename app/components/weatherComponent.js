@@ -4,7 +4,7 @@ app.component("weatherComponent", {
     templateUrl: "views/weatherComponent.html"
 });
 
-function weatherCtrl(weatherService, dialogService) {
+function weatherCtrl(weatherService, dialogService,$scope) {
     let ctrl = this;
 
     ctrl.searchParameter = "";
@@ -14,7 +14,6 @@ function weatherCtrl(weatherService, dialogService) {
         ctrl.citiesNames = cities.map(function (item) {
             return item.city;
         });
-        console.log(ctrl.citiesNames);
     };
 
     ctrl.getWeather = function () {
@@ -22,6 +21,7 @@ function weatherCtrl(weatherService, dialogService) {
             ctrl.citiesWeather = result;
         }, function (message) {
             ctrl.showDialog(message);
+            $scope.$apply();
         });
     };
 

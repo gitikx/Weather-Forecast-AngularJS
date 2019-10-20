@@ -9,8 +9,40 @@ a {
 }
 
 .inputer {
-  display: flex;
-  justify-content: center;
+  margin-right: 50%;
+  margin-left: auto;
+  height: @buttonHeight;
+
+  &_input {
+    background-color: transparent;
+    color: white;
+    border-top: none;
+    border-left: none;
+    border-right: none;
+    border-bottom-color: gray;
+    outline: none;
+
+  }
+
+  &_input:focus {
+    border-bottom-color: white;
+    animation: darkenn;
+    animation-duration: 500ms;
+  }
+
+  &_input::placeholder {
+    color: white;
+  }
+
+}
+
+@keyframes darkenn {
+  from{
+    border-bottom-color: gray;
+  }
+  to {
+    border-bottom-color: white;
+  }
 }
 
 .dialog-container {
@@ -49,32 +81,31 @@ a {
   width: 100%;
   height: @buttonHeight;
   position: fixed;
-  display: flex;
-  justify-content: center;
 
   &_box {
     z-index: 9999;
-    width: auto;
+    width: 100%;
     height: @buttonHeight;
-    border-bottom-left-radius: @radius;
-    border-bottom-right-radius: @radius;
     overflow: hidden;
-    background-color: lighten(@mainColor, 5%);
+    box-shadow: 0 3px 5px -1px rgba(0, 0, 0, .2), 0 6px 10px 0 rgba(0, 0, 0, .14), 0 1px 18px 0 rgba(0, 0, 0, .12);
+    background-color: #3f51b5;
 
     &_button {
+      display: inline-block;
+      padding: 10px 10px 10px 10px;
+      flex: auto;
       color: white;
       height: @buttonHeight;
       font-size: 23px;
-      width: 150px;
+      justify-content: center;
       text-align: center;
-      display: inline-block;
 
       &_text {
-        margin-top: 10px;
+        width: auto;
       }
 
       &:hover {
-        background-color: lighten(@mainColor, 20%);
+        background-color: darken(@mainColor, 2%);
         cursor: pointer;
         user-select: none;
       }
