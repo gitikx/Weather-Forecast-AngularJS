@@ -1,14 +1,13 @@
 <div class="forecast-container_conditions">
     <div class="forecast-container_conditions_content">
-        <div>{{forecastCtrl.name}}({{forecastCtrl.selectedDate.getDate()}}.{{forecastCtrl.selectedDate.getMonth()
-            +1}})
+        <div>{{forecastCtrl.name}}({{forecastCtrl.selectedDate.getDate()}}.{{forecastCtrl.selectedDate.getMonth() +1}})
         </div>
         <div class="forecast-container_conditions_panel">
             <div class="forecast-container_temperature">+{{forecastCtrl.data.main.temp}} K</div>
             <div class="forecast-container_image" ng-class="[forecastCtrl.data.weather[0].main]"></div>
         </div>
         <div>{{forecastCtrl.data.weather[0].description}}</div>
-        <div><input type="range" min="0" max="16" step="1" ng-model="forecastCtrl.selectedDay"
+        <div><input class="slider" type="range" min="0" max="16" step="1" ng-model="forecastCtrl.selectedDay"
                     ng-change="forecastCtrl.setWeather()"></div>
     </div>
 </div>

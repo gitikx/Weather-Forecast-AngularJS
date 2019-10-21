@@ -2,24 +2,26 @@
         <span class='switcher-container_box_logo' ng-click="routeCtrl.menuShow()">
 
         </span>
-    <span class='switcher-container_box_button' ng-if="routeCtrl.isMenuShown">
-            <a href="#!/">
-                <span class="switcher-container_box_button_text">Forecasts</span>
-            </a>
-    </span>
-    <span class='switcher-container_box_button' ng-if="routeCtrl.isMenuShown">
-            <span class="switcher-container_box_button_text">
-                <a href="#!/starred">Favourite</a>
-            </span>
-    </span>
-    <span class='switcher-container_box_button' ng-if="routeCtrl.isMenuShown">
-            <span class="switcher-container_box_button_text" ng-click="routeCtrl.searchShow()">
-                Search
-            </span>
-        <auto-complete-component ng-if="routeCtrl.isSearchShown"
-                                 cities-names="weatherCtrl.citiesNames"
-                                 city-name="weatherCtrl.searchParameter"
-                                 class="inputer"></auto-complete-component>
-    </span>
 </div>
+<div ng-if="routeCtrl.isMenuShown" class="menu">
+    <a href="#!/">
+        <div class="menu_button">
+            Forecasts
+        </div>
+    </a>
+    <a href="#!/starred">
+        <div class="menu_button">
+            Favourite
+        </div>
+    </a>
+    <div class="menu_button" ng-click="routeCtrl.searchShow()">
+        Search
+    </div>
+</div>
+<div class="menu_background" ng-if="routeCtrl.isMenuShown"></div>
+<auto-complete-component ng-if="routeCtrl.isSearchShown"
+                         cities-names="weatherCtrl.citiesNames"
+                         city-name="weatherCtrl.searchParameter"
+                         class="inputer"></auto-complete-component>
+
 

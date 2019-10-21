@@ -1,5 +1,53 @@
 @import "vars";
 
+.menu {
+  z-index: 9999;
+  position: fixed;
+  width: 200px;
+  height: 100%;
+  margin-top: 20px;
+  background-color: lighten(@mainColor, 3%);
+  color: white;
+  animation: fromLeft;
+  animation-duration: 1s;
+
+  &_background {
+    position: absolute;
+    width: 100%;
+    z-index: 9998;
+    height: 100%;
+    background-color: black;
+    opacity: 0.5;
+    animation: backgroundAppear;
+    animation-duration: 1.5s;
+  }
+
+  &_button {
+    padding: 15px 0 0 0;
+    font-family: Roboto;
+    font-weight: bold;
+    width: 100%;
+    height: 40px;
+    text-align: center;
+    vertical-align: center;
+    border-width: 1px;
+    border-style: solid;
+    border-right: 0;
+    border-left: 0;
+    border-top: 0;
+    border-color:black;
+    font-size: 20px;
+    cursor: pointer;
+    transition: 0.5s;
+  }
+
+  &_button:hover{
+    background-color: darken(@mainColor, 2%);
+    cursor: pointer;
+    user-select: none;
+  }
+}
+
 .switcher-container_box {
   top: 0;
   left: 0;
@@ -9,9 +57,10 @@
   position: fixed;
   align-items: center;
   box-shadow: 0 3px 5px -1px rgba(0, 0, 0, .2), 0 6px 10px 0 rgba(0, 0, 0, .14), 0 1px 18px 0 rgba(0, 0, 0, .12);
-  background-color: #3f51b5;
+  background-color: @mainColor;
 
   &_logo {
+    z-index: 9999;
     vertical-align: middle;
     align-items: center;
     display: inline-flex;
@@ -24,25 +73,6 @@
     text-align: center;
     background-image: url("resources/logo.png");
     background-size: contain;
-  }
-
-  &_button {
-    align-items: center;
-    display: inline-flex;
-    padding: 0px 10px 0px 10px;
-    flex: auto;
-    color: white;
-    height: @buttonHeight;
-    font-size: 23px;
-    justify-content: center;
-    text-align: center;
-    animation: fromLeft;
-    animation-duration: 1s;
-
-
-    &_text {
-      width: auto;
-    }
 
     &:hover {
       background-color: darken(@mainColor, 2%);
