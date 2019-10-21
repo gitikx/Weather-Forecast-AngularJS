@@ -10,6 +10,11 @@
                 <a href="#!/starred">Favourite</a>
             </span>
         </span>
-        <auto-complete-component class="inputer" city-name="weatherCtrl.searchParameter" cities-names="weatherCtrl.citiesNames"></auto-complete-component>
+        <span class='switcher-container_box_button'>
+            <span class="switcher-container_box_button_text" ng-click="routeCtrl.searchShow()">
+                Search
+            </span>
+        </span>
     </div>
 </div>
+<auto-complete-component ng-if="routeCtrl.isSearchShown" cities-names="weatherCtrl.citiesNames" city-name="weatherCtrl.searchParameter" class="inputer"></auto-complete-component>

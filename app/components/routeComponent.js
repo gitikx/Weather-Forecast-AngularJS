@@ -5,7 +5,11 @@ app.component("routeComponent", {
 });
 
 function routeCtrl(weatherService) {
-    this.log = function () {
-        console.log(weatherService.updateWeather());
-    }
+     let ctrl = this;
+
+     this.isSearchShown = false;
+
+     this.searchShow = function () {
+         ctrl.isSearchShown = !ctrl.isSearchShown;
+     }
 }

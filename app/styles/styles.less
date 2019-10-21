@@ -10,25 +10,20 @@ a {
 }
 
 .inputer {
-  margin-right: 50%;
-  margin-left: auto;
-  height: @buttonHeight;
+  margin-top: 50px;
+  position: fixed;
+  animation: showInput;
+  animation-duration: 1s;
 
   &_input {
-    background-color: transparent;
-    color: white;
-    border-top: none;
-    border-left: none;
-    border-right: none;
-    border-bottom-color: gray;
-    outline: none;
-
+    font-size: 24px;
+    width: 200px;
+    height: 24px;
   }
 
   &_input:focus {
+    box-shadow: 0 0 10px rgb(0, 0, 255);
     border-bottom-color: white;
-    animation: darkenn;
-    animation-duration: 500ms;
   }
 
   &_input::placeholder {
@@ -37,12 +32,23 @@ a {
 
 }
 
-@keyframes darkenn {
-  from{
-    border-bottom-color: gray;
+@keyframes appear {
+  from {
+    opacity: 0;
   }
   to {
-    border-bottom-color: white;
+    opacity: 1;
+  }
+}
+
+@keyframes showInput {
+  from {
+    left: -200px;
+    opacity: 0;
+  }
+  to {
+    left: 0;
+    opacity: 1;
   }
 }
 
@@ -105,6 +111,14 @@ a {
         width: auto;
       }
 
+      &_search {
+
+        &_image{
+          width: 20px;
+          height: 20px;
+        }
+      }
+
       &:hover {
         background-color: darken(@mainColor, 2%);
         cursor: pointer;
@@ -130,14 +144,58 @@ a {
   background-image: url('resources/clouds.png');
 }
 
+.Mist {
+  background-image: url('resources/mist.png');
+}
+
 .forecast-container {
-  display: inline-block;
-  width: 300px;
-  margin-left: 70px;
+  display: inline-flex;
+  width: auto;
+  margin-left: 10px;
   margin-top: 30px;
-  border: 2px solid green;
-  border-radius: 5px;
-  height: 100px;
+  height: 180px;
+  background-color: white;
+  font-family: Solis, Arial, Helvetica, sans-serif;
+  animation: appear;
+  animation-duration: 1s;
+
+  &_conditions {
+    display: inline-flex;
+    width: auto;
+    border-right: 2px solid gainsboro;
+    height: 100%;
+
+    &_content {
+      padding: 16px;
+    }
+
+    &_panel {
+      margin-top: 10px;
+    }
+  }
+
+  &_details {
+    display: inline-flex;
+    width: auto;
+    height: 100%;
+
+    &_content {
+      padding: 16px;
+    }
+
+    &_wind {
+      margin-top: 5px;
+    }
+
+    &_humidity {
+      margin-top: 5px;
+    }
+
+    &_pressure {
+      margin-top: 5px;
+    }
+  }
+
 
   &_title {
     position: absolute;
@@ -147,33 +205,22 @@ a {
   }
 
   &_temperature {
-    position: absolute;
-    font-size: 20px;
-    margin-left: 10px;
-    margin-top: 40px;
-  }
-
-  &_wind {
-    position: absolute;
-    font-size: 20px;
-    margin-left: 10px;
-    margin-top: 70px;
+    font-size: 30px;
+    display: inline-block;
   }
 
   &_image {
-    position: absolute;
-    margin-left: 250px;
-    margin-top: 0px;
-    z-index: 1;
-    width: 48px;
-    height: 48px;
+    width: 64px;
+    height: 64px;
+    background-size: contain;
+    display: inline-block;
   }
 }
 
 .content {
   position: relative;
   top: 80px;
-  width: 1200px;
+  width: 1400px;
   margin-left: auto;
   margin-right: auto;
 }

@@ -7,7 +7,7 @@ app.component("weatherComponent", {
 function weatherCtrl(weatherService, dialogService) {
     let ctrl = this;
 
-    ctrl.searchParameter = "";
+    ctrl.searchParameters = weatherService.searchParameters;
 
     ctrl.$onInit = function () {
 

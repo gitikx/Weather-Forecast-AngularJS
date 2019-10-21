@@ -1,12 +1,13 @@
 app.component("autoCompleteComponent", {
     templateUrl: "views/autoCompleteComponent.html",
     controller: autoCompleteCtrl,
-    controllerAs: "ctrl",
-    bindings: {
-        cityName: "=",
-        citiesNames: '<'
-    }
+    controllerAs: "ctrl"
 });
 
-function autoCompleteCtrl($scope) {
+function autoCompleteCtrl(weatherService) {
+    let ctrl = this;
+
+    ctrl.searchParameters = weatherService.searchParameters;
+
+    ctrl.citiesNames = cities;
 }

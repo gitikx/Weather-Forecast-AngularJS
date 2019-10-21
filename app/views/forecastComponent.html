@@ -1,6 +1,24 @@
-<div  class="forecast-container">
-    <div class="forecast-container_title">{{forecastCtrl.data.name}}</div>
-    <div class="forecast-container_temperature">Temp: +{{forecastCtrl.data.main.temp}} K</div>
-    <div class="forecast-container_wind">Wind: {{forecastCtrl.data.wind.speed}} m/s, {{forecastCtrl.data.wind.deg}}°</div>
-    <span class="forecast-container_image" ng-class="[forecastCtrl.data.weather[0].main]" title="{{forecastCtrl.data.weather[0].description}}"></span>
-</div>
+<span class="forecast-container">
+    <div class="forecast-container_conditions">
+    <div class="forecast-container_conditions_content">
+           <div>{{forecastCtrl.data.name}}(Current weather)</div>
+        <div class="forecast-container_conditions_panel">
+            <div class="forecast-container_temperature">+{{forecastCtrl.data.main.temp}} K</div>
+            <div class="forecast-container_image" ng-class="[forecastCtrl.data.weather[0].main]"></div>
+        </div>
+           <div>{{forecastCtrl.data.weather[0].description}}</div>
+    </div>
+    </div>
+
+    <div class="forecast-container_details">
+       <div class="forecast-container_details_content">
+           <div>Wind: {{forecastCtrl.data.wind.speed}} m/s</div>
+           <div class="forecast-container_details_wind">Wind direction: {{forecastCtrl.data.wind.deg}}°</div>
+           <div class="forecast-container_details_humidity">Humidity: {{forecastCtrl.data.main.humidity}}%</div>
+            <div class="forecast-container_details_pressure">Pressure: {{forecastCtrl.data.main.pressure}} mbar</div>
+           <div></div>
+       </div>
+    </div>
+
+
+</span>

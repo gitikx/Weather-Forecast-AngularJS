@@ -1,6 +1,10 @@
 app.service("weatherService", weatherService);
 
 function weatherService(apiService, $q) {
+    this.searchParameters = {
+        text : ""
+    }
+
     this.getWeather = function () {
         let promises = [],
             data = [],

@@ -1,5 +1,5 @@
 <div class="content">
-       <span ng-repeat="city in weatherCtrl.citiesWeather | filter: {name : weatherCtrl.searchParameter}">
+       <span ng-repeat="city in weatherCtrl.citiesWeather | filter: {name : weatherCtrl.searchParameters.text}">
         <forecast-component data="city" ng-click="weatherCtrl.test()"></forecast-component>
     </span>
 </div>

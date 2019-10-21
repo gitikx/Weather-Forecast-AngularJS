@@ -1,8 +1,8 @@
 <span>
-    <input placeholder="City name" class="inputer_input" ng-model="ctrl.cityName" list="cities-list">
+    <input placeholder="City name" class="inputer_input" ng-model="ctrl.searchParameters.text" list="cities-list">
 </span>
 <datalist id="cities-list">
-    <div ng-repeat="name in ctrl.citiesNames">
-        <option value="{{name}}"/>
+    <div ng-repeat="city in ctrl.citiesNames">
+        <option value="{{city.city}}"/>
     </div>
 </datalist>
