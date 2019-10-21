@@ -8,5 +8,5 @@ app.component("autoCompleteComponent", {
     }
 });
 
-function autoCompleteCtrl() {
+function autoCompleteCtrl($scope) {
 }

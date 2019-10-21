@@ -10,6 +10,7 @@ function dialogService() {
         //     '</div> <dialog-component></dialog-component>' +
         //     '</div>');
         var dialog = angular.element('<dialog-component></dialog-component>');
+        console.log($compile);
         dialog.on("click", function (){
             dialog.remove();
         });
