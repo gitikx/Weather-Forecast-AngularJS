@@ -27,5 +27,30 @@ const cities = [{
     "fullName": "Mahilyow, belarus",
     "city": "Mahilyow",
     "country": "Belarus"
-  }
-]
+  },
+  {
+    "fullName": "Vawkavysk, belarus",
+    "city": "Vawkavysk",
+    "country": "Belarus"
+  },
+  {
+    "fullName": "Mazyr, belarus",
+    "city": "Mazyr",
+    "country": "Belarus"
+  },
+  {
+    "fullName": "Babruysk, belarus",
+    "city": "Babruysk",
+    "country": "Belarus"
+  },
+  {
+    "fullName": "Orsha, belarus",
+    "city": "Orsha",
+    "country": "Belarus"
+  },
+  {
+    "fullName": "Maladzyechna, belarus",
+    "city": "Maladzyechna",
+    "country": "Belarus"
+  },
+];

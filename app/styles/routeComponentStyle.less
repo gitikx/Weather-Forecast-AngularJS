@@ -1,0 +1,59 @@
+@import "vars";
+
+.switcher-container_box {
+  top: 0;
+  left: 0;
+  z-index: 9999;
+  width: 100%;
+  height: @buttonHeight;
+  position: fixed;
+  align-items: center;
+  box-shadow: 0 3px 5px -1px rgba(0, 0, 0, .2), 0 6px 10px 0 rgba(0, 0, 0, .14), 0 1px 18px 0 rgba(0, 0, 0, .12);
+  background-color: #3f51b5;
+
+  &_logo {
+    vertical-align: middle;
+    align-items: center;
+    display: inline-flex;
+    flex: auto;
+    color: white;
+    height: @buttonHeight - 10px;
+    width: @buttonHeight - 10px;
+    margin-left: 5px;
+    font-size: 23px;
+    text-align: center;
+    background-image: url("resources/logo.png");
+    background-size: contain;
+  }
+
+  &_button {
+    align-items: center;
+    display: inline-flex;
+    padding: 0px 10px 0px 10px;
+    flex: auto;
+    color: white;
+    height: @buttonHeight;
+    font-size: 23px;
+    justify-content: center;
+    text-align: center;
+    animation: fromLeft;
+    animation-duration: 1s;
+
+
+    &_text {
+      width: auto;
+    }
+
+    &:hover {
+      background-color: darken(@mainColor, 2%);
+      cursor: pointer;
+      user-select: none;
+    }
+  }
+}
+
+.router-container {
+  margin-top: 30px;
+  margin-bottom: 30px;
+}
+

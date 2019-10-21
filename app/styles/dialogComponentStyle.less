@@ -1,0 +1,33 @@
+@import "vars";
+
+.dialog-container {
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0, 0, 0, 0.5);
+  position: absolute;
+  z-index: 9999;
+
+  &_window {
+    margin-left: auto;
+    margin-right: auto;
+    margin-top: @alertSize;
+    height: @alertSize - 50px;
+    width: @alertSize;
+    background-color: white;
+    border-radius: 9px;
+  }
+
+  &_image {
+    margin-left: 50px;
+    width: 100px;
+    height: 100px;
+    background-image: url("resources/alert.png");
+    background-size: contain;
+  }
+
+  &_message {
+    margin-top: 20px;
+    font-size: 20px;
+    text-align: center;
+  }
+}

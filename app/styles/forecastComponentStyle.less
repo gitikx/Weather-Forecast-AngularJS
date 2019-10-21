@@ -1,0 +1,91 @@
+@import "vars";
+
+.forecast-container {
+  border-radius: 5px;
+  display: inline-flex;
+  width: auto;
+  margin: 30px 0 0 30px;
+  height: auto;
+  background-color: white;
+  font-family: @font;
+  animation: appear;
+  animation-duration: 1s;
+  min-width: 422px;
+
+  &_conditions {
+    display: inline-flex;
+    width: auto;
+    border-right: 2px solid gainsboro;
+    height: 100%;
+
+    &_content {
+      padding: 16px;
+    }
+
+    &_panel {
+      margin-top: 10px;
+    }
+  }
+
+  &_details {
+    display: inline-flex;
+    width: auto;
+    height: 100%;
+
+    &_content {
+      padding: 16px;
+    }
+
+    &_wind {
+      margin-top: 5px;
+    }
+
+    &_humidity {
+      margin-top: 5px;
+    }
+
+    &_pressure {
+      margin-top: 5px;
+    }
+  }
+
+
+  &_title {
+    position: absolute;
+    font-size: 24px;
+    margin-left: 10px;
+    margin-top: 10px;
+  }
+
+  &_temperature {
+    font-size: 30px;
+    display: inline-block;
+  }
+
+  &_image {
+    width: 64px;
+    height: 64px;
+    background-size: contain;
+    display: inline-block;
+  }
+}
+
+.Clear {
+  background-image: url('resources/clear.png');
+}
+
+.Rain {
+  background-image: url('resources/rain.png');
+}
+
+.Drizzle {
+  background-image: url('resources/drizzle.png');
+}
+
+.Clouds {
+  background-image: url('resources/clouds.png');
+}
+
+.Mist {
+  background-image: url('resources/mist.png');
+}

@@ -1,24 +1,24 @@
-<span class="forecast-container">
-    <div class="forecast-container_conditions">
+<div class="forecast-container_conditions">
     <div class="forecast-container_conditions_content">
-           <div>{{forecastCtrl.data.name}}(Current weather)</div>
+        <div>{{forecastCtrl.name}}({{forecastCtrl.selectedDate.getDate()}}.{{forecastCtrl.selectedDate.getMonth()
+            +1}})
+        </div>
         <div class="forecast-container_conditions_panel">
             <div class="forecast-container_temperature">+{{forecastCtrl.data.main.temp}} K</div>
             <div class="forecast-container_image" ng-class="[forecastCtrl.data.weather[0].main]"></div>
         </div>
-           <div>{{forecastCtrl.data.weather[0].description}}</div>
+        <div>{{forecastCtrl.data.weather[0].description}}</div>
+        <div><input type="range" min="0" max="16" step="1" ng-model="forecastCtrl.selectedDay"
+                    ng-change="forecastCtrl.setWeather()"></div>
     </div>
+</div>
+
+<div class="forecast-container_details">
+    <div class="forecast-container_details_content">
+        <div>Wind: {{forecastCtrl.data.wind.speed}} m/s</div>
+        <div class="forecast-container_details_wind">Wind direction: {{forecastCtrl.data.wind.deg}}°</div>
+        <div class="forecast-container_details_humidity">Humidity: {{forecastCtrl.data.main.humidity}}%</div>
+        <div class="forecast-container_details_pressure">Pressure: {{forecastCtrl.data.main.pressure}} mbar</div>
     </div>
+</div>
 
-    <div class="forecast-container_details">
-       <div class="forecast-container_details_content">
-           <div>Wind: {{forecastCtrl.data.wind.speed}} m/s</div>
-           <div class="forecast-container_details_wind">Wind direction: {{forecastCtrl.data.wind.deg}}°</div>
-           <div class="forecast-container_details_humidity">Humidity: {{forecastCtrl.data.main.humidity}}%</div>
-            <div class="forecast-container_details_pressure">Pressure: {{forecastCtrl.data.main.pressure}} mbar</div>
-           <div></div>
-       </div>
-    </div>
-
-
-</span>

@@ -36,11 +36,9 @@ module.exports = function (grunt) {
             concat: {
                 dist: {
                     files: {
-                        'build/style.less': 'app/styles/*.less',
                         'build/script.js': [
                             'node_modules/angular/angular.js',
                             'node_modules/angular-route/angular-route.js',
-                            'node_modules/less/dist/less.js',
                             'app/script.js',
                             'app/config/routeProvider.js',
                             'app/components/*.js',
@@ -69,13 +67,23 @@ module.exports = function (grunt) {
                         }
                     }
                 }
+            },
+            less: {
+                development: {
+                    options: {
+                        paths: ['app/styles/']
+                    },
+                    files: {
+                        'build/style.css': 'app/styles/*.less'
+                    }
+                }
             }
         }
     );
-
+    grunt.loadNpmTasks('grunt-contrib-less');
     grunt.loadNpmTasks('grunt-contrib-copy');
     grunt.loadNpmTasks('grunt-contrib-concat');
     grunt.loadNpmTasks('grunt-contrib-clean');
 
-    grunt.registerTask('default', ['clean', 'copy:dist', 'concat:dist']);
+    grunt.registerTask('default', ['clean', 'copy:dist', 'concat:dist', 'less:development']);
 };

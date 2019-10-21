@@ -9,7 +9,13 @@ function routeCtrl(weatherService) {
 
      this.isSearchShown = false;
 
+     this.isMenuShown = false;
+
      this.searchShow = function () {
          ctrl.isSearchShown = !ctrl.isSearchShown;
+     }
+
+     this.menuShow = function () {
+         ctrl.isMenuShown = ! ctrl.isMenuShown;
      }
 }

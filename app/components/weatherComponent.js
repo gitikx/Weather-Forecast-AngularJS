@@ -10,7 +10,6 @@ function weatherCtrl(weatherService, dialogService) {
     ctrl.searchParameters = weatherService.searchParameters;
 
     ctrl.$onInit = function () {
-
         ctrl.getWeather();
         ctrl.citiesNames = cities.map(function (item) {
             return item.city;
