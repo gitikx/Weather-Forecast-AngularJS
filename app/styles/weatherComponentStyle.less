@@ -1,6 +1,19 @@
 .content {
+  margin-top: @defaultSize;
   position: relative;
   display: flex;
-  justify-content: space-evenly;
+  justify-content: flex-start;
   flex-wrap: wrap;
+  transition: 1s;
+  width: auto;
+
+  &_margined {
+    margin-left: 300px;
+  }
+}
+
+.weatherComponent {
+  width: calc(100% - 150px);
+  justify-content: center;
+  display: flex;
 }

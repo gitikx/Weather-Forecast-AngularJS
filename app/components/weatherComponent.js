@@ -4,8 +4,15 @@ app.component("weatherComponent", {
     templateUrl: "views/weatherComponent.html"
 });
 
-function weatherCtrl(weatherService, dialogService) {
+function weatherCtrl(weatherService, dialogService, dataService) {
     let ctrl = this;
+
+    ctrl.$doCheck = function() {
+        if(dataService.componentsData.isMenuShown){
+            ctrl.marginClass = "content_margined";
+        }
+        else ctrl.marginClass = "";
+    };
 
     ctrl.searchParameters = weatherService.searchParameters;
 

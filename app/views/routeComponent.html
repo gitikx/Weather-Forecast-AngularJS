@@ -3,7 +3,7 @@
 
         </span>
 </div>
-<div ng-if="routeCtrl.isMenuShown" class="menu">
+<div ng-if="routeCtrl.data.isMenuShown" class="menu">
     <a href="#!/">
         <div class="menu_button">
             Forecasts
@@ -18,7 +18,7 @@
         Search
     </div>
 </div>
-<div class="menu_background" ng-if="routeCtrl.isMenuShown"></div>
+<!--<div class="menu_background" ng-if="routeCtrl.data.isMenuShown"></div>-->
 <auto-complete-component ng-if="routeCtrl.isSearchShown"
                          cities-names="weatherCtrl.citiesNames"
                          city-name="weatherCtrl.searchParameter"

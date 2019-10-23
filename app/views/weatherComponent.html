@@ -1,6 +1,7 @@
-<div class="content">
-    <forecast-component ng-repeat="city in weatherCtrl.citiesWeather | filter: {name : weatherCtrl.searchParameters.text}"
-                        data="city"
-                        class="forecast-container">
+<div ng-class="weatherCtrl.marginClass" class="content">
+    <forecast-component
+            ng-repeat="city in weatherCtrl.citiesWeather | filter: {name : weatherCtrl.searchParameters.text}"
+            data="city"
+            class="forecast-container">
     </forecast-component>
 </div>

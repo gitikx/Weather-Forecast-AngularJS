@@ -74,9 +74,18 @@ module.exports = function (grunt) {
                         paths: ['app/styles/']
                     },
                     files: {
-                        'build/style.css': 'app/styles/*.less'
+                        'build/style.css': 'app/styles/styles.less'
                     }
                 }
+            },
+            watch: {
+                scripts: {
+                    files: ['app/*/*.js','app/*/*.less','app/*/*.html'],
+                    tasks: ['default'],
+                    options: {
+                        interrupt: true,
+                    },
+                },
             }
         }
     );
@@ -84,6 +93,8 @@ module.exports = function (grunt) {
     grunt.loadNpmTasks('grunt-contrib-copy');
     grunt.loadNpmTasks('grunt-contrib-concat');
     grunt.loadNpmTasks('grunt-contrib-clean');
+    grunt.loadNpmTasks('grunt-contrib-watch');
 
-    grunt.registerTask('default', ['clean', 'copy:dist', 'concat:dist', 'less:development']);
+
+    grunt.registerTask('default', ['clean', 'copy:dist', 'concat:dist', 'less:development', 'watch']);
 };

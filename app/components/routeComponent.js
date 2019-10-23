@@ -4,18 +4,18 @@ app.component("routeComponent", {
     templateUrl: "views/routeComponent.html"
 });
 
-function routeCtrl(weatherService) {
+function routeCtrl(dataService) {
      let ctrl = this;
 
      this.isSearchShown = false;
 
-     this.isMenuShown = false;
+     this.data = dataService.componentsData;
 
      this.searchShow = function () {
          ctrl.isSearchShown = !ctrl.isSearchShown;
      }
 
      this.menuShow = function () {
-         ctrl.isMenuShown = ! ctrl.isMenuShown;
+         ctrl.data.isMenuShown = !ctrl.data.isMenuShown;
      }
 }

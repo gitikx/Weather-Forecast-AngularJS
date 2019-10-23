@@ -5,7 +5,7 @@
   position: fixed;
   width: 200px;
   height: 100%;
-  margin-top: 20px;
+  margin-top: @defaultSize;
   background-color: lighten(@mainColor, 3%);
   color: white;
   animation: fromLeft;
@@ -49,29 +49,29 @@
 }
 
 .switcher-container_box {
+  display: flex;
+  align-items: center;
   top: 0;
   left: 0;
   z-index: 9999;
   width: 100%;
-  height: @buttonHeight;
+  height: @defaultSize;
   position: fixed;
-  align-items: center;
   box-shadow: 0 3px 5px -1px rgba(0, 0, 0, .2), 0 6px 10px 0 rgba(0, 0, 0, .14), 0 1px 18px 0 rgba(0, 0, 0, .12);
   background-color: @mainColor;
 
   &_logo {
     z-index: 9999;
     vertical-align: middle;
-    align-items: center;
-    display: inline-flex;
-    flex: auto;
+    display: flex;
+    flex-grow: 0;
     color: white;
-    height: @buttonHeight - 10px;
-    width: @buttonHeight - 10px;
-    margin-left: 5px;
+    height: @defaultSize - 10px;
+    width: @defaultSize - 10px;
+    margin-left: @defaultIntend;
     font-size: 23px;
     text-align: center;
-    background-image: url("resources/logo.png");
+    background: url("resources/logo.png") no-repeat;
     background-size: contain;
 
     &:hover {
@@ -83,7 +83,8 @@
 }
 
 .router-container {
-  margin-top: 30px;
-  margin-bottom: 30px;
+  display: flex;
+  justify-content: center;
+  margin-bottom: @defaultIntend + 25px;
+  width: 100%;
 }
-
