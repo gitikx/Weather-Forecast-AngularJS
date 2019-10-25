@@ -51,6 +51,7 @@ function weatherService(apiService, $q) {
         let data, deferred = $q.defer();
         apiService.get('forecast', {id: cityId, cnt: 16}).then(function (result) {
             data = result.data;
+            console.log(data);
             deferred.resolve(data)
         }, function (reject) {
             deferred.reject("Connection error")

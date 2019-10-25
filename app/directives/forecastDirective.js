@@ -5,10 +5,20 @@ app.directive('forecastDirective', function () {
             data: '<'
         },
         templateUrl: 'views/forecastDirective.html',
-        controller: function ($scope) {
+        controller: function ($scope, $timeout) {
+            $scope.$watch('data', function (newValue) {
+                    $timeout(function () {
+                        $scope.rotationStyle = {
+                            transform: 'rotate(' + newValue + 'deg)'
+                        };
+
+                    })
+                }
+            );
             $scope.rotationStyle = {
-                transform : 'rotate(' + $scope.data.wind.deg + 'deg)'
+                transform: 'rotate(' + $scope.data.wind.deg + 'deg)'
             };
-        }
+        },
+
     }
 });
