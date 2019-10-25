@@ -2,16 +2,26 @@
     <div class="forecast-container_conditions_content">
         <span class="forecast-container_conditions_name">
             {{forecastCtrl.name}}
-            <img src="resources/star.svg" alt="" width="15px" height="15px" ng-click="forecastCtrl.addToStarred()" class="forecast-container_conditions_image">
+            <img src="resources/star.svg" alt="" width="15px" height="15px" ng-click="forecastCtrl.addToStarred()"
+                 class="forecast-container_conditions_image">
         </span>
-        <div class="forecast-container_conditions_date">{{forecastCtrl.selectedDate.getDate()}}.{{forecastCtrl.selectedDate.getMonth() +1}}</div>
+        <div class="forecast-container_conditions_date">
+            {{forecastCtrl.selectedDate.getDate()}}.{{forecastCtrl.selectedDate.getMonth() +1}}
+        </div>
         <div class="forecast-container_conditions_panel">
             <div class="forecast-container_temperature">+{{forecastCtrl.data.main.temp}} K</div>
             <div class="forecast-container_image" ng-class="[forecastCtrl.data.weather[0].main]"></div>
         </div>
         <div>{{forecastCtrl.data.weather[0].description}}</div>
-        <div><input class="slider" type="range" min="0" max="16" step="1" ng-model="forecastCtrl.selectedDay"
-                    ng-change="forecastCtrl.setWeather()"></div>
+        <div>{{forecastCtrl.currentDate.getDate()}}.{{forecastCtrl.currentDate.getMonth() +1}}
+            <input class="slider"
+                   type="range"
+                   min="0" max="16"
+                   step="1"
+                   ng-model="forecastCtrl.selectedDay"
+                   ng-change="forecastCtrl.setWeather()">
+            {{forecastCtrl.endDate.getDate()}}.{{forecastCtrl.endDate.getMonth() +1}}
+        </div>
     </div>
 </div>
 

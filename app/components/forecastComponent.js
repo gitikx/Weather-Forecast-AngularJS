@@ -20,6 +20,9 @@ function forecastController(weatherService, dataService) {
 
     ctrl.currentDate = new Date();
 
+    ctrl.endDate = new Date();
+    ctrl.endDate.setDate(ctrl.currentDate.getDate() + 16);
+
     ctrl.selectedDate = new Date();
 
     ctrl.$onInit = function () {
@@ -30,6 +33,7 @@ function forecastController(weatherService, dataService) {
     };
 
     ctrl.setWeather = function () {
+        console.log(ctrl.endDate.getDate());
         ctrl.data = ctrl.selectedDay === 0 ? ctrl.currentWeather : ctrl.forecasts[ctrl.selectedDay - 1];
         ctrl.selectedDate = new Date();
         ctrl.selectedDate.setDate(ctrl.currentDate.getDate() + ctrl.selectedDay);
