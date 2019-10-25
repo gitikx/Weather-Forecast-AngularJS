@@ -45,13 +45,12 @@ function weatherService(apiService, $q) {
         });
 
         return deferred.promise;
-    }
+    };
 
     this.getForecast = function (cityId) {
         let data, deferred = $q.defer();
         apiService.get('forecast', {id: cityId, cnt: 16}).then(function (result) {
             data = result.data;
-            console.log(data);
             deferred.resolve(data)
         }, function (reject) {
             deferred.reject("Connection error")
