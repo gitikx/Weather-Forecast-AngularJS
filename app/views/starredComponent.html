@@ -2,7 +2,7 @@
     <forecast-component
             ng-repeat="city in starredCtrl.citiesWeather | filter: {name : starredCtrl.searchParameters.text}"
             starred="true"
-            on-delete="starredCtrl.deteleFromStarred(id)"
+            on-delete="starredCtrl.deleteFromStarred(index)"
             data="city"
             class="forecast-container">
     </forecast-component>

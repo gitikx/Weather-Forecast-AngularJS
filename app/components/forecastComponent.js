@@ -38,7 +38,7 @@ function forecastController(weatherService, dataService) {
     ctrl.addToStarred = function () {
         if (ctrl.starred == true) {
             dataService.removeFromStarred(ctrl.data.id);
-            ctrl.onDelete({id: ctrl.data.id});
+            ctrl.onDelete({index :ctrl.data.id});
         } else {
             dataService.addToStarred(ctrl.data.id);
         }

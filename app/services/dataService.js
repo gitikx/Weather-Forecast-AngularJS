@@ -13,15 +13,20 @@ function dataService($cookies) {
             starred = starred.split('_').indexOf(cityId.toString()) === -1 ? starred + "_" + cityId : starred;
         }
         $cookies.put('starred', starred);
-    }
+    };
 
     this.getStarred = function () {
-        return $cookies.get('starred').split('_');
-    }
+        let cookie = $cookies.get('starred');
+        if(cookie === undefined) return cookie;
+        else return cookie.split('_');
+
+    };
 
     this.removeFromStarred = function (cityId) {
         let starred = $cookies.get('starred').split('_');
         starred.splice(starred.indexOf(cityId.toString()), 1);
-        $cookies.put('starred',starred.join('_'));
+        if (starred.length === 0) $cookies.remove('starred');
+        else $cookies.put('starred', starred.join('_'));
+        console.log("doshel")
     }
 }

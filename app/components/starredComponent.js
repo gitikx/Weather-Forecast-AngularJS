@@ -23,16 +23,20 @@ function starredController(weatherService, dataService) {
     };
 
     ctrl.getWeather = function () {
-        weatherService.getWeathersById(dataService.getStarred()).then(function (result) {
-            ctrl.citiesWeather = result;
-        }, function (message) {
-            ctrl.showDialog(message);
-        });
+        let citiesId = dataService.getStarred();
+        if (citiesId !== undefined) {
+            weatherService.getWeathersById(citiesId).then(function (result) {
+                ctrl.citiesWeather = result;
+            }, function (message) {
+                ctrl.showDialog(message);
+            });
+        }
+        else ctrl.citiesWeather = [];
     };
 
-    ctrl.deleteFromStarred = function (id) {
-        console.log(id);
-    }
+    ctrl.deleteFromStarred = function (index) {
+        ctrl.getWeather();
+    };
 
     ctrl.showDialog = function (message) {
         dialogService.showDialog(message);
