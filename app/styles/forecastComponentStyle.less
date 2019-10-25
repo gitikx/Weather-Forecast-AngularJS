@@ -35,13 +35,21 @@
   font-family: @font;
   animation: appear;
   animation-duration: 1s;
-  min-width: 422px;
+  min-width: 427px;
 
   &_conditions {
     display: inline-flex;
     width: auto;
     border-right: 2px solid gainsboro;
     height: 100%;
+
+    &_date {
+      font-size: 24px;
+    }
+
+    &_image:hover {
+      fill: yellow;
+    }
 
     &_content {
       padding: 16px;
@@ -63,6 +71,27 @@
 
     &_wind {
       margin-top: @defaultIntend;
+      display: inline-flex;
+    }
+
+    &_windDirection {
+      margin-top: @defaultIntend;
+      background: url("resources/wind.png") no-repeat;
+      background-size: contain;
+      width: 30px;
+      height: 30px;
+    }
+
+    &_direction {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      margin-top: @defaultIntend;
+      background: url("resources/direction.png") no-repeat;
+      background-size: contain;
+      width: 70px;
+      height: 70px;
+      transition: 1s;
     }
 
     &_humidity {

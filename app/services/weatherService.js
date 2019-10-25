@@ -26,6 +26,27 @@ function weatherService(apiService, $q) {
         return deferred.promise;
     };
 
+    this.getWeathersById = function (idArray) {
+        let promises = [],
+            data = [],
+            deferred = $q.defer();
+
+        idArray.forEach(function (id) {
+            promises.push(apiService.get('weather', {id: id}));
+        });
+
+        $q.all(promises).then(function (results) {
+            results.forEach(function (element) {
+                data.push(element.data);
+            });
+            deferred.resolve(data);
+        }, function (reject) {
+            deferred.reject("Connection error");
+        });
+
+        return deferred.promise;
+    }
+
     this.getForecast = function (cityId) {
         let data, deferred = $q.defer();
         apiService.get('forecast', {id: cityId, cnt: 16}).then(function (result) {

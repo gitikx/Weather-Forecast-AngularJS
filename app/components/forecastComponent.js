@@ -3,11 +3,13 @@ app.component("forecastComponent", {
     controller: forecastController,
     controllerAs: "forecastCtrl",
     bindings: {
+        starred: '<',
+        onDelete: '&',
         data: "<"
     }
 });
 
-function forecastController(weatherService) {
+function forecastController(weatherService, dataService) {
     let ctrl = this;
 
     ctrl.selectedDay = 0;
@@ -33,8 +35,17 @@ function forecastController(weatherService) {
         ctrl.selectedDate.setDate(ctrl.currentDate.getDate() + ctrl.selectedDay);
     };
 
+    ctrl.addToStarred = function () {
+        if (ctrl.starred == true) {
+            dataService.removeFromStarred(ctrl.data.id);
+            ctrl.onDelete({id: ctrl.data.id});
+        } else {
+            dataService.addToStarred(ctrl.data.id);
+        }
 
-    this.updateForecast = function () {
+    };
+
+    ctrl.updateForecast = function () {
         weatherService.getForecast(ctrl.id).then(function (result) {
             ctrl.forecasts = result.list;
         })

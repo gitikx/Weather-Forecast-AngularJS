@@ -1,7 +1,10 @@
 <div class="forecast-container_conditions">
     <div class="forecast-container_conditions_content">
-        <div>{{forecastCtrl.name}}({{forecastCtrl.selectedDate.getDate()}}.{{forecastCtrl.selectedDate.getMonth() +1}})
-        </div>
+        <span class="forecast-container_conditions_name">
+            {{forecastCtrl.name}}
+            <img src="resources/star.svg" alt="" width="15px" height="15px" ng-click="forecastCtrl.addToStarred()" class="forecast-container_conditions_image">
+        </span>
+        <div class="forecast-container_conditions_date">{{forecastCtrl.selectedDate.getDate()}}.{{forecastCtrl.selectedDate.getMonth() +1}}</div>
         <div class="forecast-container_conditions_panel">
             <div class="forecast-container_temperature">+{{forecastCtrl.data.main.temp}} K</div>
             <div class="forecast-container_image" ng-class="[forecastCtrl.data.weather[0].main]"></div>
@@ -14,10 +17,7 @@
 
 <div class="forecast-container_details">
     <div class="forecast-container_details_content">
-        <div>Wind: {{forecastCtrl.data.wind.speed}} m/s</div>
-        <div class="forecast-container_details_wind">Wind direction: {{forecastCtrl.data.wind.deg}}°</div>
-        <div class="forecast-container_details_humidity">Humidity: {{forecastCtrl.data.main.humidity}}%</div>
-        <div class="forecast-container_details_pressure">Pressure: {{forecastCtrl.data.main.pressure}} mbar</div>
+        <forecast-directive data="forecastCtrl.data">
+        </forecast-directive>
     </div>
 </div>
-

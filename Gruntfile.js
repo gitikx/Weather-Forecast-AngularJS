@@ -39,10 +39,12 @@ module.exports = function (grunt) {
                         'build/script.js': [
                             'node_modules/angular/angular.js',
                             'node_modules/angular-route/angular-route.js',
+                            'node_modules/angular-cookies/angular-cookies.js',
                             'app/script.js',
                             'app/config/routeProvider.js',
                             'app/components/*.js',
                             'app/services/*.js',
+                            'app/directives/*.js',
                             'app/services/resources/*.js'
                         ]
                     }
@@ -80,11 +82,19 @@ module.exports = function (grunt) {
             },
             watch: {
                 scripts: {
-                    files: ['app/*/*.js','app/*/*.less','app/*/*.html'],
+                    files: ['app/*/*.js', 'app/*/*.less', 'app/*/*.html'],
                     tasks: ['default'],
                     options: {
                         interrupt: true,
                     },
+                },
+            },
+            autoprefixer: {
+                options: {
+                    browsers : ['last 2 versions', 'ie 8', 'ie 9']
+                },
+                your_target: {
+                    'build/style.css':'build/style.css'
                 },
             }
         }
@@ -94,7 +104,8 @@ module.exports = function (grunt) {
     grunt.loadNpmTasks('grunt-contrib-concat');
     grunt.loadNpmTasks('grunt-contrib-clean');
     grunt.loadNpmTasks('grunt-contrib-watch');
+    grunt.loadNpmTasks('grunt-autoprefixer')
 
 
-    grunt.registerTask('default', ['clean', 'copy:dist', 'concat:dist', 'less:development', 'watch']);
+    grunt.registerTask('default', ['clean', 'copy:dist', 'concat:dist', 'less:development', 'autoprefixer']);
 };

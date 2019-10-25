@@ -5,7 +5,7 @@ app.config(function ($routeProvider) {
         });
     $routeProvider.when('/starred',
         {
-            template : "<div>There are should be starred component</div>"
+            template : "<starred-component class='ng-class: weatherComponent'></starred-component>"
         });
     $routeProvider.otherwise({redirectTo: '/'})
 });

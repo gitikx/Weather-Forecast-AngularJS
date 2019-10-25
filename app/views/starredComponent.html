@@ -1,0 +1,9 @@
+<div ng-class="starredCtrl.marginClass" class="content">
+    <forecast-component
+            ng-repeat="city in starredCtrl.citiesWeather | filter: {name : starredCtrl.searchParameters.text}"
+            starred="true"
+            on-delete="starredCtrl.deteleFromStarred(id)"
+            data="city"
+            class="forecast-container">
+    </forecast-component>
+</div>
