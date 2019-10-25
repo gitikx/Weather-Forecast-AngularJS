@@ -1,7 +1,10 @@
 <div class='switcher-container_box'>
-        <span class='switcher-container_box_logo' ng-click="routeCtrl.menuShow()">
-
-        </span>
+    <span class='switcher-container_box_logo' ng-click="routeCtrl.menuShow()">
+    </span>
+    <span><auto-complete-component cities-names="weatherCtrl.citiesNames"
+                                   city-name="weatherCtrl.searchParameter"
+                                   class="inputer"></auto-complete-component>
+    </span>
 </div>
 <div ng-if="routeCtrl.data.isMenuShown" class="menu">
     <a href="#!/">
@@ -14,14 +17,7 @@
             Favourite
         </div>
     </a>
-    <div class="menu_button" ng-click="routeCtrl.searchShow()">
-        Search
-    </div>
 </div>
 <!--<div class="menu_background" ng-if="routeCtrl.data.isMenuShown"></div>-->
-<auto-complete-component ng-if="routeCtrl.isSearchShown"
-                         cities-names="weatherCtrl.citiesNames"
-                         city-name="weatherCtrl.searchParameter"
-                         class="inputer"></auto-complete-component>
 
 

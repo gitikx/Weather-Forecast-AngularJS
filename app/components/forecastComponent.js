@@ -21,11 +21,11 @@ function forecastController(weatherService, dataService) {
     ctrl.currentDate = new Date();
 
     ctrl.endDate = new Date();
-    ctrl.endDate.setDate(ctrl.currentDate.getDate() + 16);
 
     ctrl.selectedDate = new Date();
 
     ctrl.$onInit = function () {
+        ctrl.endDate.setDate(ctrl.currentDate.getDate() + 16);
         ctrl.id = ctrl.data.id;
         ctrl.name = ctrl.data.name;
         ctrl.currentWeather = ctrl.data;
@@ -42,7 +42,7 @@ function forecastController(weatherService, dataService) {
     ctrl.addToStarred = function () {
         if (ctrl.starred == true) {
             dataService.removeFromStarred(ctrl.data.id);
-            ctrl.onDelete({index :ctrl.data.id});
+            ctrl.onDelete({index: ctrl.data.id});
         } else {
             dataService.addToStarred(ctrl.data.id);
         }
