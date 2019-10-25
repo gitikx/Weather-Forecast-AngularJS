@@ -10,7 +10,7 @@ app.directive('forecastDirective', function () {
                 transform: 'rotate(' + $scope.data.wind.deg + 'deg)'
             };
         },
-        link: function (scope, element, attrs) {
+        link: function (scope) {
             scope.$watch('data', function (newValue) {
                     scope.rotationStyle = {
                         transform: 'rotate(' + newValue.wind.deg + 'deg)'
