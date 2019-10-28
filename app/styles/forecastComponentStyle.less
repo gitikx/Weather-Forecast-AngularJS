@@ -48,10 +48,29 @@
     }
 
     &_image:hover {
-      fill: yellow;
-      fill-opacity: 1;
       cursor: pointer;
     }
+
+    &_image:after {
+      background-size: contain;
+      content: url("resources/star.svg");
+      cursor: pointer;
+    }
+
+    &_image:hover:after {
+      content: url("resources/star_yellow.svg");
+    }
+
+    &_imageStarred:after {
+      background-size: contain;
+      content: url("resources/star_yellow.svg");
+      cursor: pointer;
+    }
+
+    &_imageStarred:hover:after {
+      content: url("resources/star.svg");
+    }
+
 
     &_content {
       padding: 12px;
@@ -59,6 +78,9 @@
 
     &_panel {
       margin-top: 10px;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
     }
   }
 

@@ -17,7 +17,7 @@ function dataService($cookies) {
 
     this.getStarred = function () {
         let cookie = $cookies.get('starred');
-        if(cookie === undefined) return cookie;
+        if (cookie === undefined) return cookie;
         else return cookie.split('_');
 
     };
@@ -27,6 +27,10 @@ function dataService($cookies) {
         starred.splice(starred.indexOf(cityId.toString()), 1);
         if (starred.length === 0) $cookies.remove('starred');
         else $cookies.put('starred', starred.join('_'));
-        console.log("doshel")
+    };
+
+    this.isStarred = function (cityId) {
+        let starred = $cookies.get('starred').split('_');
+        return starred.indexOf(cityId.toString()) !== -1;
     }
 }

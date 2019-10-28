@@ -53,4 +53,33 @@ const cities = [{
     "city": "Maladzyechna",
     "country": "Belarus"
   },
+  {
+    "fullName": "Pinsk, belarus",
+    "city": "Pinsk",
+    "country": "Belarus"
+  },
+  {
+    "fullName": "Kobryn, belarus",
+    "city": "Kobryn",
+    "country": "Belarus"
+  },
+  {
+    "fullName": "Smarhon, belarus",
+    "city": "Smarhon",
+    "country": "Belarus"
+  },
+  {
+    "fullName": "Bykhaw, belarus",
+    "city": "Bykhaw",
+    "country": "Belarus"
+  },
+  {
+    "fullName": "Baranavichy, belarus",
+    "city": "Baranavichy",
+    "country": "Belarus"
+  }, {
+    "fullName": "Iwye, belarus",
+    "city": "Iwye",
+    "country": "Belarus"
+  },
 ];

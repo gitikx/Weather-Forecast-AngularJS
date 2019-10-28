@@ -1,15 +1,19 @@
 <div class="forecast-container_conditions">
     <div class="forecast-container_conditions_content">
         <span class="forecast-container_conditions_name">
-            {{forecastCtrl.name}}
-            <img src="resources/star.svg" alt="" width="15px" height="15px" ng-click="forecastCtrl.addToStarred()"
-                 class="forecast-container_conditions_image">
+            {{'GRODNO' | translate}}
+            <span ng-if="forecastCtrl.isStarred"
+                  ng-click="forecastCtrl.addToStarred()"
+                  class="forecast-container_conditions_imageStarred"></span>
+            <span ng-if="!forecastCtrl.isStarred"
+                  ng-click="forecastCtrl.addToStarred()"
+                  class="forecast-container_conditions_image"></span>
         </span>
         <div class="forecast-container_conditions_date">
             {{forecastCtrl.selectedDate.getDate()}}.{{forecastCtrl.selectedDate.getMonth() +1}}
         </div>
         <div class="forecast-container_conditions_panel">
-            <div class="forecast-container_temperature">+{{forecastCtrl.data.main.temp}} K</div>
+            <div class="forecast-container_temperature">+{{forecastCtrl.data.main.temp}} °C</div>
             <div class="forecast-container_image" ng-class="[forecastCtrl.data.weather[0].main]"></div>
         </div>
         <div>{{forecastCtrl.data.weather[0].description}}</div>

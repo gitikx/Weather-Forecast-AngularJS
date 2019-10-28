@@ -58,4 +58,10 @@ function weatherService(apiService, $q) {
 
         return deferred.promise;
     }
+
+    this.convertTemperatures = function (cities) {
+        cities.forEach(function (element) {
+            element.main.temp = ~~(element.main.temp - 273);
+        })
+    }
 }

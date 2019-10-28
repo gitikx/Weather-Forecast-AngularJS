@@ -27,6 +27,7 @@ function starredController(weatherService, dataService) {
         if (citiesId !== undefined) {
             weatherService.getWeathersById(citiesId).then(function (result) {
                 ctrl.citiesWeather = result;
+                weatherService.convertTemperatures(ctrl.citiesWeather);
             }, function (message) {
                 ctrl.showDialog(message);
             });

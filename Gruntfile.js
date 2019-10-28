@@ -17,17 +17,25 @@ module.exports = function (grunt) {
                                 cwd: 'app/resources/',
                                 src: ['**'],
                                 dest: 'build/resources/'
-                            }, {
-                            expand: true,
-                            cwd: 'app/',
-                            src: ['index.html'],
-                            dest: 'build/'
-                        }, {
-                            expand: true,
-                            cwd: 'app/services/resources/*.js',
-                            src: ['**'],
-                            dest: 'build/resources/'
-                        }
+                            },
+                            {
+                                expand: true,
+                                cwd: 'app/',
+                                src: ['index.html'],
+                                dest: 'build/'
+                            },
+                            {
+                                expand: true,
+                                cwd: 'app/services/resources/*.js',
+                                src: ['**'],
+                                dest: 'build/resources/'
+                            },
+                            {
+                                expand: true,
+                                cwd: 'app/resources/languages/resources/*.json',
+                                src: ['**'],
+                                dest: 'build/languages/'
+                            }
 
                         ]
 
@@ -38,10 +46,11 @@ module.exports = function (grunt) {
                     files: {
                         'build/script.js': [
                             'node_modules/angular/angular.js',
+                            'node_modules/angular-translate/dist/angular-translate.js',
                             'node_modules/angular-route/angular-route.js',
                             'node_modules/angular-cookies/angular-cookies.js',
                             'app/script.js',
-                            'app/config/routeProvider.js',
+                            'app/config/*.js',
                             'app/components/*.js',
                             'app/services/*.js',
                             'app/directives/*.js',
@@ -91,10 +100,10 @@ module.exports = function (grunt) {
             },
             autoprefixer: {
                 options: {
-                    browsers : ['last 2 versions', 'ie 8', 'ie 9']
+                    browsers: ['last 2 versions', 'ie 8', 'ie 9']
                 },
                 your_target: {
-                    'build/style.css':'build/style.css'
+                    'build/style.css': 'build/style.css'
                 },
             }
         }

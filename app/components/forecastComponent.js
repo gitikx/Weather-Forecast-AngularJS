@@ -3,7 +3,6 @@ app.component("forecastComponent", {
     controller: forecastController,
     controllerAs: "forecastCtrl",
     bindings: {
-        starred: '<',
         onDelete: '&',
         data: "<"
     }
@@ -30,6 +29,7 @@ function forecastController(weatherService, dataService) {
         ctrl.name = ctrl.data.name;
         ctrl.currentWeather = ctrl.data;
         ctrl.updateForecast();
+        ctrl.isStarred = dataService.isStarred(ctrl.id);
     };
 
     ctrl.setWeather = function () {
@@ -40,18 +40,20 @@ function forecastController(weatherService, dataService) {
     };
 
     ctrl.addToStarred = function () {
-        if (ctrl.starred == true) {
+        if (ctrl.isStarred === true) {
             dataService.removeFromStarred(ctrl.data.id);
             ctrl.onDelete({index: ctrl.data.id});
+            ctrl.isStarred = !ctrl.isStarred;
         } else {
             dataService.addToStarred(ctrl.data.id);
+            ctrl.isStarred = !ctrl.isStarred;
         }
-
     };
 
     ctrl.updateForecast = function () {
         weatherService.getForecast(ctrl.id).then(function (result) {
             ctrl.forecasts = result.list;
+            weatherService.convertTemperatures(ctrl.forecasts);
         })
     }
 

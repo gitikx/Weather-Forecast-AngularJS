@@ -2,10 +2,13 @@
   margin-top: @defaultSize;
   position: relative;
   display: flex;
+  max-height: calc(100vh - 50px);
   justify-content: flex-start;
   flex-wrap: wrap;
   transition: 1s;
   width: auto;
+  overflow-x: hidden;
+  overflow-y: auto;
 
   &_margined {
     margin-left: 300px;

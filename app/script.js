@@ -1,1 +1,1 @@
-const app = angular.module("forecastApp", ["ngRoute", "ngCookies"]);
+const app = angular.module("forecastApp", ["ngRoute", "ngCookies", 'pascalprecht.translate']);
