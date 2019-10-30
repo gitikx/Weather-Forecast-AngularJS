@@ -7,7 +7,6 @@ app.component("weatherComponent", {
 function weatherCtrl(weatherService, dialogService, dataService, translateService) {
     let ctrl = this;
 
-    translateService.changeLanguage("RU");
     ctrl.$doCheck = function() {
         if(dataService.componentsData.isMenuShown){
             ctrl.marginClass = "content_margined";

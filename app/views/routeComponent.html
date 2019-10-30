@@ -5,16 +5,22 @@
                                    city-name="weatherCtrl.searchParameter"
                                    class="inputer"></auto-complete-component>
     </span>
+    <span style="right: 0 ; display: flex ; position: fixed; margin-top: 12px; margin-right: 5px;">
+        <select ng-model="routeCtrl.selectedLanguage" ng-change="routeCtrl.changeLanguage()">
+            <option value="en">EN</option>
+            <option value="ru">RU</option>
+        </select>
+    </span>
 </div>
 <div ng-if="routeCtrl.data.isMenuShown" class="menu">
     <a href="#!/">
         <div class="menu_button">
-            Forecasts
+            {{'Forecasts' | translate}}
         </div>
     </a>
     <a href="#!/starred">
         <div class="menu_button">
-            Favourite
+            {{'Favourite' | translate}}
         </div>
     </a>
 </div>
